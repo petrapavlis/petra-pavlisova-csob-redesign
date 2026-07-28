@@ -397,21 +397,21 @@ function AfterSiteMock() {
 
 function WhyItWorksPanel() {
   const before = [
-    "6+ rovnocenných položek v hlavní navigaci najednou",
-    "Právní disclaimer hned vedle hlavní nabídky, ještě než uživatel ví, o co jde",
-    "8 produktových dlaždic stejné velikosti — nic neříká, co je pro mě důležité",
-    "Odborný žargon v názvech produktů bez vysvětlení",
+    "Solidní, přehledná struktura — orientace funguje, ale tón zůstává formální a produktově orientovaný",
+    "Disclaimer a podmínky hned u hlavní nabídky, ještě než uživatel ví, jestli je produkt pro něj",
+    "Více produktů vedle sebe se stejnou vizuální váhou — volba je na uživateli",
+    "Odborné názvy produktů předpokládají, že uživatel ví, co hledá",
   ];
   const after = [
-    "Jedna otázka, jedna odpověď: co řeším a co mám udělat teď",
-    "Odpovědi na to, co lidi fakt zajímá: kolik to stojí, jak dlouho to trvá, co budu potřebovat",
-    "Důvěra řešena rovnou — bez skrytých poplatků, žádné papírování předem",
-    "Tři jasné cesty místo deseti rovnocenných možností",
+    "Stejná nabídka, srozumitelnější vstup: jedna otázka, jedna odpověď",
+    "Rovnou to, co lidi zajímá nejvíc — kolik to stojí, jak dlouho to trvá, co budu potřebovat",
+    "Důvěra řešena aktivně — bez skrytých poplatků, žádné papírování předem",
+    "Méně rovnocenných voleb najednou, jasnější první krok",
   ];
   return (
     <div className="mt-6 grid gap-6 md:grid-cols-2">
       <div className="rounded-2xl border border-[#cfe6f3] bg-[#ebf6fd] p-5">
-        <p className="text-xs font-bold uppercase tracking-wide text-[#003366]/60">Co plete a odrazuje</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-[#003366]/60">Dnešní přístup</p>
         <ul className="mt-3 space-y-2">
           {before.map((b) => (
             <li key={b} className="text-xs leading-relaxed text-[#003366]">— {b}</li>
@@ -419,7 +419,7 @@ function WhyItWorksPanel() {
         </ul>
       </div>
       <div className="rounded-2xl border border-blue-100 bg-blue-50 p-5">
-        <p className="text-xs font-bold uppercase tracking-wide text-blue-700">Co lidi skutečně zajímá</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-blue-700">Kam by šlo jít dál</p>
         <ul className="mt-3 space-y-2">
           {after.map((a) => (
             <li key={a} className="text-xs leading-relaxed text-blue-900">— {a}</li>
