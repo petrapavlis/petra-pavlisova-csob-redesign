@@ -6,6 +6,7 @@ import {
   Building2,
   ChevronLeft,
   ChevronRight,
+  Circle,
   Layers,
   MousePointer2,
   Rocket,
@@ -26,7 +27,7 @@ const stages = [
     year: "01",
     label: "Web project foundation",
     title: "Agency experience: websites that actually get built",
-    subtitle: "Škoda Auto · BMW · Velo e-shop · Korejská energie",
+    subtitle: "Škoda Auto · BMW · VELO, Vuse, glo™ a neo™",
     icon: Layers,
     summary:
       "From agency delivery I understand how web redesign projects move from brief and structure to UX, development, testing and launch — not only as a pretty concept, but as a real delivery process.",
@@ -43,12 +44,12 @@ const stages = [
     year: "02",
     label: "Corporate web ownership",
     title: "Nespresso CZ/SK: web operations with business impact",
-    subtitle: "B2B/B2C platforms · CMS · PDP · campaigns · localization",
+    subtitle: "B2B/B2C platforms · CMS · PLP · PDP · Landing pages · Campaigns",
     icon: Settings2,
     summary:
       "In my current role I connect business, marketing, HQ and IT through daily web execution: campaign pages, homepage updates, product content, tracking, localization and troubleshooting.",
     bullets: [
-      "CMS/Pagebuilder execution across CZ, SK, CZEN and SKEN variants",
+      "Web execution across CZ, SK, CZEN and SKEN variants + newly PL and PLEN",
       "Campaign tracking, homepage banners, landing pages and PDP updates",
       "Jira/Confluence documentation, incident follow-up and platform issue handling",
     ],
@@ -59,7 +60,7 @@ const stages = [
     id: "discovery",
     year: "03",
     label: "ČSOB redesign discovery",
-    title: "Step 1: understand the public web as a product",
+    title: "Understand the ČSOB public web as a product",
     subtitle: "Users · business goals · regulatory needs · existing content",
     icon: Search,
     summary:
@@ -70,13 +71,13 @@ const stages = [
       "Align marketing, product teams, legal/regulatory and IT expectations",
     ],
     angle:
-      "My role: structure the chaos into a shared product view — what matters, why, for whom and how we measure success.",
+      "My role: Structure the chaos into a shared product view. What matters, why, for whom and how we measure success.",
   },
   {
     id: "roadmap",
     year: "04",
     label: "Roadmap & backlog",
-    title: "Step 2: turn requirements into a manageable delivery system",
+    title: "Turn requirements into a manageable delivery system",
     subtitle: "Backlog · user stories · acceptance criteria · prioritization",
     icon: Workflow,
     summary:
@@ -93,7 +94,7 @@ const stages = [
     id: "ux",
     year: "05",
     label: "UX & conversion",
-    title: "Step 3: design for clarity, trust and conversion",
+    title: "Design for clarity, trust and conversion",
     subtitle: "Navigation · content hierarchy · lead generation · digital sales",
     icon: MousePointer2,
     summary:
@@ -110,7 +111,7 @@ const stages = [
     id: "launch",
     year: "06",
     label: "Launch & optimization",
-    title: "Step 4: launch, measure, learn, improve",
+    title: "Launch, measure, learn, improve",
     subtitle: "QA · tracking · release readiness · continuous optimization",
     icon: Rocket,
     summary:
@@ -121,7 +122,7 @@ const stages = [
       "Continuous UX and conversion improvements based on data",
     ],
     angle:
-      "My role: keep ownership after go-live — not only deliver the redesign, but make the public web better over time.",
+      "My role: Keep ownership after go-live. Not only deliver the redesign, but make the public web better over time.",
   },
 ];
 
@@ -241,10 +242,12 @@ function PresentationSection({ active, setActive, progress }) {
 
       <section className="pt-12">
         <h1 className="max-w-2xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 md:text-5xl">
-          From owning a brand's web to owning a bank's public web.
+          Going public.
+          <br />
+          <span className="text-2xl font-bold text-blue-700 md:text-3xl">Bigger web. Bigger step.</span>
         </h1>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">
-          A compact interactive presentation connecting my experience and vision on the way to a ČSOB public web redesign role.
+          From owning a brand's web to owning the roadmap of a bank's. A compact interactive presentation connecting my experience and vision on the way to a ČSOB public web redesign role.
         </p>
       </section>
 
@@ -412,17 +415,23 @@ function WhyItWorksPanel() {
     <div className="mt-6 grid gap-6 md:grid-cols-2">
       <div className="rounded-2xl border border-[#cfe6f3] bg-[#ebf6fd] p-5">
         <p className="text-xs font-bold uppercase tracking-wide text-[#003366]/60">Dnešní přístup</p>
-        <ul className="mt-3 space-y-2">
+        <ul className="mt-3 space-y-2.5">
           {before.map((b) => (
-            <li key={b} className="text-xs leading-relaxed text-[#003366]">— {b}</li>
+            <li key={b} className="flex gap-2 text-xs leading-relaxed text-[#003366]">
+              <Circle size={6} className="mt-1.5 shrink-0 fill-[#003366]/40 text-[#003366]/40" />
+              {b}
+            </li>
           ))}
         </ul>
       </div>
       <div className="rounded-2xl border border-blue-100 bg-blue-50 p-5">
         <p className="text-xs font-bold uppercase tracking-wide text-blue-700">Kam by šlo jít dál</p>
-        <ul className="mt-3 space-y-2">
+        <ul className="mt-3 space-y-2.5">
           {after.map((a) => (
-            <li key={a} className="text-xs leading-relaxed text-blue-900">— {a}</li>
+            <li key={a} className="flex gap-2 text-xs leading-relaxed text-blue-900">
+              <TrendingUp size={13} className="mt-0.5 shrink-0 text-blue-600" />
+              {a}
+            </li>
           ))}
         </ul>
       </div>
