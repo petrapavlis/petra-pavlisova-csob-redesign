@@ -305,7 +305,7 @@ function BeforeSiteMock() {
         <span>Bydlení</span>
         <span className="ml-auto rounded bg-[#e56100] px-2 py-1 text-white">Přihlášení</span>
       </div>
-      <div className="bg-[#5b9bd5] px-4 py-3 text-sm font-bold text-white">Účty a karty</div>
+      <div className="bg-[#003366] px-4 py-3 text-sm font-bold text-white">Účty a karty</div>
       <div className="grid gap-3 bg-[#ebf6fd] p-4 md:grid-cols-[1.1fr_1fr]">
         <div className="flex aspect-[16/10] items-center justify-center bg-[#cfe6f3] text-[9px] text-[#003366]/40">
           [ lifestyle fotografie ]
@@ -318,7 +318,7 @@ function BeforeSiteMock() {
             <li>— Online sjednání za pár minut</li>
             <li>— Výhody a odměny ve Světě výhod</li>
           </ul>
-          <button className="mt-3 bg-[#0099cc] px-3 py-1.5 text-[9px] font-bold text-white">
+          <button className="mt-3 bg-[#003366] px-3 py-1.5 text-[9px] font-bold text-white">
             Více o účtu a podmínkách akce
           </button>
         </div>
@@ -479,29 +479,33 @@ function CaseStudySection() {
   return (
     <section className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-xs font-bold uppercase tracking-wide text-blue-700">Case study</p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950">ČSOB Účty a karty — redesign koncept</h2>
+        <div className="flex flex-wrap items-start justify-between gap-6">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wide text-blue-700">Case study</p>
+            <h2 className="mt-2 text-3xl font-black text-slate-950">ČSOB Účty a karty — redesign koncept</h2>
+          </div>
+          <div className="inline-flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
+            <button
+              onClick={() => setMode("before")}
+              className={`px-5 py-2.5 transition ${mode === "before" ? "bg-[#0099cc] text-white" : "text-slate-600"}`}
+            >
+              Before redesign
+            </button>
+            <button
+              onClick={() => setMode("after")}
+              className={`px-5 py-2.5 transition ${mode === "after" ? "bg-[#003366] text-white" : "text-slate-600"}`}
+            >
+              After redesign
+            </button>
+          </div>
+        </div>
+
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
           ČSOB má oproti řadě konkurentů solidní a přehlednou strukturu — orientace na webu funguje dobře. Redesign proto neřeší chaos, ale zlidštění tónu a vizuální modernizaci: srovnání konkrétní podstránky (účty/karty) dnes (Before) a po zjednodušení a osvěžení vzhledu (After), inspirované přehledností nabídky u Revolutu.
         </p>
         <p className="mt-3 max-w-2xl text-xs italic leading-relaxed text-slate-400">
           Jde o zjednodušený ilustrativní příklad mého uvažování nad vizuálním a obsahovým směřováním, nikoliv o závěr založený na UX výzkumu, datech nebo jiných relevantních podkladech.
         </p>
-
-        <div className="mt-8 inline-flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
-          <button
-            onClick={() => setMode("before")}
-            className={`px-5 py-2.5 transition ${mode === "before" ? "bg-[#003366] text-white" : "text-slate-600"}`}
-          >
-            Before redesign
-          </button>
-          <button
-            onClick={() => setMode("after")}
-            className={`px-5 py-2.5 transition ${mode === "after" ? "bg-[#0099cc] text-white" : "text-slate-600"}`}
-          >
-            After redesign
-          </button>
-        </div>
 
         <div className="mt-6">
           <AnimatePresence mode="wait">
