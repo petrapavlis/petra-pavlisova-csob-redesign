@@ -231,7 +231,7 @@ function PresentationSection({ active, setActive, progress }) {
           <img
             src={heroPhoto}
             alt="Petra Pavlisová"
-            className="h-9 w-9 rounded-full object-cover grayscale"
+            className="h-14 w-14 rounded-full object-cover shadow-sm grayscale"
           />
           <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
         </div>
