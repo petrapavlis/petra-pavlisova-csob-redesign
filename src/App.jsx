@@ -188,7 +188,7 @@ function MiniBrowser({ activeStage }) {
         </div>
       </div>
       <div className="relative p-6">
-        <div className="grid gap-5 md:grid-cols-[1fr_0.8fr]">
+        <div className="grid items-start gap-5 md:grid-cols-[1fr_0.8fr]">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-4 py-2 text-sm font-bold text-white shadow-md">
               <MousePointer2 size={16} /> Active stage {stage.year}
@@ -210,8 +210,8 @@ function MiniBrowser({ activeStage }) {
               ))}
             </div>
           </div>
-          <div className="rounded-3xl bg-slate-900 p-6 shadow-xl">
-            <p className="text-xs font-bold uppercase tracking-wide text-white/50">ČSOB redesign angle</p>
+          <div className="mt-3 h-fit self-start rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-500 p-6 shadow-lg shadow-blue-200">
+            <p className="text-xs font-bold uppercase tracking-wide text-white/70">ČSOB redesign angle</p>
             <p className="mt-3 text-lg font-bold leading-snug text-white">{stage.angle}</p>
           </div>
         </div>
