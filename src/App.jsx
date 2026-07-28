@@ -484,6 +484,9 @@ function CaseStudySection() {
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
           ČSOB má oproti řadě konkurentů solidní a přehlednou strukturu — orientace na webu funguje dobře. Redesign proto neřeší chaos, ale zlidštění tónu a vizuální modernizaci: srovnání konkrétní podstránky (účty/karty) dnes (Before) a po zjednodušení a osvěžení vzhledu (After), inspirované přehledností nabídky u Revolutu.
         </p>
+        <p className="mt-3 max-w-2xl text-xs italic leading-relaxed text-slate-400">
+          Jde o zjednodušený ilustrativní příklad mého uvažování nad vizuálním a obsahovým směřováním, nikoliv o závěr založený na UX výzkumu, datech nebo jiných relevantních podkladech.
+        </p>
 
         <div className="mt-8 inline-flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
           <button
