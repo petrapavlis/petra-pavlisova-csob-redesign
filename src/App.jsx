@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, BadgeCheck, BarChart3, Code2, Layers, Map, MousePointer2, PenTool, Rocket, Search, Settings2, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, BadgeCheck, BarChart3, Building2, Code2, Layers, Map, MousePointer2, PenTool, Rocket, Search, Settings2, Sparkles, TrendingUp, Users, Workflow, Zap } from "lucide-react";
 import heroPhoto from "./assets/petra-pavlisova.jpg";
 
 const stages = [
@@ -119,6 +119,38 @@ const proofPoints = [
   { label: "Corporate CMS ownership", value: "Nespresso CZ/SK", icon: Layers },
   { label: "Delivery tools", value: "Jira · Confluence", icon: Workflow },
   { label: "Web performance mindset", value: "Tracking · Funnel · UX", icon: BarChart3 },
+];
+
+const competitors = [
+  { name: "Česká spořitelna", owner: "Erste Group (AT)", note: "Nejvíce klientů (~4,5 mil.), silný retail, moderní appka" },
+  { name: "Komerční banka", owner: "Société Générale (FR) → převod vlastnictví", note: "3. největší dle klientů i bilance, probíhá změna vlastníka" },
+  { name: "UniCredit Bank", owner: "UniCredit (IT)", note: "Střední velikost, firemní i retail segment" },
+  { name: "Raiffeisenbank", owner: "RBI (AT)", note: "Považována za technologického lídra trhu" },
+  { name: "MONETA Money Bank", owner: "sloučení s Air Bank", note: "Digital-first pozice, jednoduché UX jako diferenciátor" },
+  { name: "mBank", owner: "Commerzbank (DE, přes PL)", note: "Referenční UX na CEE trhu, čistá appka" },
+];
+
+const uxRoleModels = [
+  {
+    name: "Revolut",
+    icon: Zap,
+    lesson: "Zvládá komplexnost bez zahlcení — postupné odkrývání funkcí, jasná hierarchie akcí.",
+  },
+  {
+    name: "Monzo",
+    icon: TrendingUp,
+    lesson: "Radikální transparentnost — okamžité notifikace, kategorizace výdajů, lidský tón místo institucionálního.",
+  },
+  {
+    name: "N26",
+    icon: Sparkles,
+    lesson: "Minimalistická estetika + rychlá funkčnost. Karta/podpora nikdy dál než 2 kliky.",
+  },
+  {
+    name: "Nubank",
+    icon: Users,
+    lesson: "Lokalizace a teplý, ne sterilní minimalismus — jednoduchost jako důvěra, ne chudoba.",
+  },
 ];
 
 /* ---------- COLORFUL VARIANT ---------- */
@@ -328,6 +360,11 @@ function ColorVariant({ active, setActive, progress }) {
             <MiniBrowserColor activeStage={active} />
           </AnimatePresence>
         </section>
+
+        <div className="mt-16">
+          <RedesignConcept />
+          <CompetitiveStudy />
+        </div>
       </main>
     </div>
   );
@@ -522,6 +559,171 @@ function MinimalVariant({ active, setActive, progress }) {
 }
 
 /* ---------- APP with switcher ---------- */
+
+function BeforeMock() {
+  return (
+    <div className="border border-neutral-300 bg-white text-left">
+      <div className="flex items-center gap-4 border-b border-neutral-200 bg-[#0a3a7a] px-4 py-3 text-xs font-semibold text-white">
+        <span>LOGO BANKY</span>
+        <span className="hidden md:inline">Osobní účty</span>
+        <span className="hidden md:inline">Spoření</span>
+        <span className="hidden md:inline">Půjčky</span>
+        <span className="hidden md:inline">Pojištění</span>
+        <span className="hidden md:inline">Firmy a podnikatelé</span>
+        <span className="hidden md:inline">Kariéra</span>
+        <span className="ml-auto rounded bg-white/20 px-2 py-1">Přihlásit se</span>
+      </div>
+      <div className="grid gap-3 bg-[#0a3a7a] px-4 py-8 text-white md:grid-cols-2">
+        <div>
+          <p className="text-2xl font-bold leading-snug">
+            Získejte hypotéku s výhodným úrokem již od 4,49 % p.a.*
+          </p>
+          <p className="mt-2 text-xs text-white/70">
+            *Platí při sjednání životního pojištění a aktivním používání platební karty. Podrobné podmínky viz sazebník.
+          </p>
+          <button className="mt-4 rounded bg-white px-4 py-2 text-xs font-bold text-[#0a3a7a]">
+            Sjednat online
+          </button>
+        </div>
+        <div className="grid grid-cols-3 gap-2 text-[10px]">
+          {["Kalkulačka", "Pobočky", "Kurzovní lístek", "Infolinka", "Aplikace", "Formuláře"].map((t) => (
+            <div key={t} className="rounded border border-white/20 bg-white/10 p-2 text-center">{t}</div>
+          ))}
+        </div>
+      </div>
+      <div className="grid grid-cols-2 gap-2 p-4 md:grid-cols-4">
+        {["Běžný účet", "Spořicí účet", "Stavební spoření", "Investice", "Kreditní karta", "Pojištění", "Leasing", "Penzijní spoření"].map((t) => (
+          <div key={t} className="border border-neutral-200 p-3 text-center text-[11px] font-medium text-neutral-700">
+            {t}
+          </div>
+        ))}
+      </div>
+      <p className="border-t border-neutral-200 p-4 text-[10px] leading-relaxed text-neutral-400">
+        Hustá horní navigace s mnoha položkami, dlouhé právní texty hned v hero sekci, mřížka produktových dlaždic bez jasné priority, málo bílého prostoru — typický vzor tradičního korporátního bankovního webu.
+      </p>
+    </div>
+  );
+}
+
+function AfterMock() {
+  return (
+    <div className="border border-neutral-300 bg-white text-left">
+      <div className="flex items-center justify-between border-b border-neutral-200 px-6 py-4">
+        <span className="font-serif text-sm">banka</span>
+        <button className="border border-neutral-900 px-4 py-1.5 text-xs font-medium">Přihlásit se</button>
+      </div>
+      <div className="px-6 py-14">
+        <p className="text-xs uppercase tracking-[0.2em] text-neutral-400">Hypotéky</p>
+        <h3 className="mt-4 max-w-md font-serif text-3xl leading-tight text-neutral-900">
+          Spočítejte si hypotéku za 2 minuty.
+        </h3>
+        <button className="mt-6 border border-neutral-900 bg-neutral-900 px-5 py-3 text-sm font-medium text-white">
+          Spustit kalkulačku
+        </button>
+      </div>
+      <div className="grid grid-cols-3 gap-6 border-t border-neutral-200 px-6 py-8">
+        {["Účty", "Spoření", "Hypotéky"].map((t) => (
+          <div key={t} className="text-sm font-medium text-neutral-800">{t}</div>
+        ))}
+      </div>
+      <p className="border-t border-neutral-200 p-4 text-[10px] leading-relaxed text-neutral-400">
+        Jeden jasný cíl na obrazovku, jedna primární akce, minimum navigačních položek, generózní bílý prostor — princip "reduced cognitive load" z moderního fintech UX.
+      </p>
+    </div>
+  );
+}
+
+function RedesignConcept() {
+  const [mode, setMode] = useState("before");
+  return (
+    <section className="mb-16 border-t border-neutral-900 pt-8">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">Redesign concept</p>
+          <h2 className="mt-2 font-serif text-2xl text-neutral-950">Before → After</h2>
+        </div>
+        <div className="flex overflow-hidden rounded-full border border-neutral-300 text-xs font-medium">
+          <button
+            onClick={() => setMode("before")}
+            className={`px-4 py-2 transition ${mode === "before" ? "bg-neutral-900 text-white" : "text-neutral-600"}`}
+          >
+            Before
+          </button>
+          <button
+            onClick={() => setMode("after")}
+            className={`px-4 py-2 transition ${mode === "after" ? "bg-neutral-900 text-white" : "text-neutral-600"}`}
+          >
+            After
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={mode}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+        >
+          {mode === "before" ? <BeforeMock /> : <AfterMock />}
+        </motion.div>
+      </AnimatePresence>
+
+      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-neutral-600">
+        Ilustrativní srovnání principů, ne skutečný obsah konkrétní banky — cílem je ukázat rozdíl mezi hustou, produktově orientovanou strukturou a přehledným, úkolově orientovaným redesignem.
+      </p>
+    </section>
+  );
+}
+
+function CompetitiveStudy() {
+  return (
+    <section className="mb-16">
+      <div className="mb-6">
+        <p className="text-xs uppercase tracking-[0.22em] text-neutral-500">Market context</p>
+        <h2 className="mt-2 font-serif text-2xl text-neutral-950">Konkurenční prostředí a UX role models</h2>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2">
+        <div>
+          <div className="mb-3 flex items-center gap-2 text-sm font-medium text-neutral-800">
+            <Building2 size={16} /> Hlavní konkurence na trhu ČR
+          </div>
+          <div className="divide-y divide-neutral-200 border border-neutral-200">
+            {competitors.map((c) => (
+              <div key={c.name} className="p-3">
+                <p className="text-sm font-medium text-neutral-900">{c.name}</p>
+                <p className="text-xs text-neutral-500">{c.owner}</p>
+                <p className="mt-1 text-xs leading-relaxed text-neutral-600">{c.note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <div className="mb-3 flex items-center gap-2 text-sm font-medium text-neutral-800">
+            <Sparkles size={16} /> Globální UX role models (fintech)
+          </div>
+          <div className="divide-y divide-neutral-200 border border-neutral-200">
+            {uxRoleModels.map((r) => {
+              const Icon = r.icon;
+              return (
+                <div key={r.name} className="flex gap-3 p-3">
+                  <Icon className="mt-0.5 shrink-0 text-neutral-500" size={16} />
+                  <div>
+                    <p className="text-sm font-medium text-neutral-900">{r.name}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-neutral-600">{r.lesson}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function App() {
   const [variant, setVariant] = useState("minimal");
