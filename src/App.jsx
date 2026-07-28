@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowRight,
   BadgeCheck,
-  BarChart3,
   Building2,
   ChevronLeft,
   ChevronRight,
@@ -128,13 +127,6 @@ const stages = [
   },
 ];
 
-const proofPoints = [
-  { label: "Agency web redesigns", value: "Škoda · BMW · Velo", icon: Sparkles },
-  { label: "Corporate CMS ownership", value: "Nespresso CZ/SK", icon: Layers },
-  { label: "Delivery tools", value: "Jira · Confluence", icon: Workflow },
-  { label: "Web performance mindset", value: "Tracking · Funnel · UX", icon: BarChart3 },
-];
-
 const competitors = [
   { name: "Česká spořitelna", owner: "Erste Group (AT)", note: "Nejvíce klientů (~4,5 mil.), silný retail, moderní appka" },
   { name: "Komerční banka", owner: "Société Générale (FR) → převod vlastnictví", note: "3. největší dle klientů i bilance, probíhá změna vlastníka" },
@@ -218,21 +210,9 @@ function MiniBrowser({ activeStage }) {
               ))}
             </div>
           </div>
-          <div className="rounded-3xl border border-slate-100 bg-slate-50/80 p-5">
-            <p className="text-xs font-bold uppercase tracking-wide text-slate-400">ČSOB redesign angle</p>
-            <p className="mt-3 text-lg font-bold leading-snug text-slate-900">{stage.angle}</p>
-            <div className="mt-5 grid grid-cols-2 gap-3">
-              {proofPoints.map((p) => {
-                const Icon = p.icon;
-                return (
-                  <div key={p.label} className="rounded-2xl bg-white p-3 shadow-sm">
-                    <Icon className="text-blue-600" size={18} />
-                    <p className="mt-2 text-[11px] font-semibold uppercase text-slate-400">{p.label}</p>
-                    <p className="mt-1 text-sm font-bold text-slate-800">{p.value}</p>
-                  </div>
-                );
-              })}
-            </div>
+          <div className="rounded-3xl bg-slate-900 p-6 shadow-xl">
+            <p className="text-xs font-bold uppercase tracking-wide text-white/50">ČSOB redesign angle</p>
+            <p className="mt-3 text-lg font-bold leading-snug text-white">{stage.angle}</p>
           </div>
         </div>
       </div>
@@ -272,7 +252,7 @@ function PresentationSection({ active, setActive, progress }) {
 
       <section className="pb-4 pt-12">
         <p className="mb-3 text-sm font-bold uppercase tracking-wide text-blue-700">Moje roadmapa</p>
-        <div className="flex gap-5 overflow-x-auto px-1 pb-6 pt-3">
+        <div className="flex gap-5 overflow-x-auto px-4 pb-6 pt-3">
                   {stages.map((stage, i) => (
                     <StageCard key={stage.id} stage={stage} active={i === active} onClick={() => setActive(i)} />
                   ))}
