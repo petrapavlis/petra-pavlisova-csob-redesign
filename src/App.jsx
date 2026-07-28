@@ -403,7 +403,7 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
 
   return (
     <header className="mx-auto max-w-6xl px-6 pt-10">
-      <div className="flex flex-wrap items-center justify-between gap-6 border-b border-slate-200/70 pb-6">
+      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 border-b border-slate-200/70 pb-6">
         <div className="flex items-center gap-3">
           <img
             src={heroPhoto}
@@ -413,34 +413,34 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
           <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-3 justify-self-center">
+          <span className="hidden text-xs font-semibold uppercase tracking-wide text-slate-400 sm:inline">
+            {t.roadmapLabel}
+          </span>
+          <div className="h-2 w-32 rounded-full bg-slate-200 sm:w-40">
+            <motion.div
+              className="h-2 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-400"
+              animate={{ width: `${progress}%` }}
+              transition={{ duration: 0.5 }}
+            />
+          </div>
+          <span className="text-sm font-black text-blue-700">{progress}%</span>
+        </div>
+
+        <div className="flex justify-end">
           <div className="flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
             <button
               onClick={() => setLang("cz")}
-              className={`px-3 py-1.5 transition ${lang === "cz" ? "bg-slate-900 text-white" : "text-slate-500"}`}
+              className={`px-3 py-1.5 transition ${lang === "cz" ? "bg-blue-700 text-white" : "text-slate-500"}`}
             >
               CZ
             </button>
             <button
               onClick={() => setLang("en")}
-              className={`px-3 py-1.5 transition ${lang === "en" ? "bg-slate-900 text-white" : "text-slate-500"}`}
+              className={`px-3 py-1.5 transition ${lang === "en" ? "bg-blue-700 text-white" : "text-slate-500"}`}
             >
               EN
             </button>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <span className="hidden text-xs font-semibold uppercase tracking-wide text-slate-400 sm:inline">
-              {t.roadmapLabel}
-            </span>
-            <div className="h-2 w-32 rounded-full bg-slate-200 sm:w-40">
-              <motion.div
-                className="h-2 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-400"
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.5 }}
-              />
-            </div>
-            <span className="text-sm font-black text-blue-700">{progress}%</span>
           </div>
         </div>
       </div>
