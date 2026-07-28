@@ -269,7 +269,8 @@ const uxRoleModelsByLang = {
 
 const UI = {
   cz: {
-    roadmapLabel: "Moje roadmapa",
+    roadmapLabel: "Moje cesta",
+    progressLabel: "Na cestě",
     heroLine1: "Going public.",
     heroLine2: "Bigger web. Bigger step.",
     heroSub:
@@ -294,7 +295,8 @@ const UI = {
     roleModelsTitle: "Globální UX role models (fintech)",
   },
   en: {
-    roadmapLabel: "My roadmap",
+    roadmapLabel: "My journey",
+    progressLabel: "On the way",
     heroLine1: "Going public.",
     heroLine2: "Bigger web. Bigger step.",
     heroSub:
@@ -415,7 +417,7 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
 
         <div className="flex items-center gap-3 justify-self-center">
           <span className="hidden text-xs font-semibold uppercase tracking-wide text-slate-400 sm:inline">
-            {t.roadmapLabel}
+            {t.progressLabel}
           </span>
           <div className="h-2 w-32 rounded-full bg-slate-200 sm:w-40">
             <motion.div
