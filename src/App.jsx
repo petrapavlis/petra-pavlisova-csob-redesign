@@ -155,9 +155,11 @@ function StageCard({ stage, active, onClick }) {
   return (
     <button
       onClick={onClick}
-      className={`group min-w-[280px] max-w-[280px] rounded-3xl border p-5 text-left transition-all duration-300 ${
-        active ? "border-blue-300 bg-white shadow-xl shadow-blue-100" : "border-slate-200 bg-white/70 hover:-translate-y-1 hover:bg-white"
-      }`}
+      className={`group min-w-[280px] max-w-[280px] rounded-3xl border-2 p-5 text-left transition-all duration-300 ${
+              active
+                ? "scale-[1.04] border-blue-600 bg-white shadow-2xl shadow-blue-200"
+                : "border-slate-200 bg-white/70 opacity-70 hover:-translate-y-1 hover:bg-white hover:opacity-100"
+            }`}
     >
       <span className="inline-flex rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 text-xs font-bold text-white shadow-md">
         {stage.year}
@@ -237,13 +239,13 @@ function MiniBrowser({ activeStage }) {
 }
 
 function PresentationSection({ active, setActive, progress }) {
+  const goPrev = () => setActive((a) => (a > 0 ? a - 1 : a));
+  const goNext = () => setActive((a) => (a < stages.length - 1 ? a + 1 : a));
+
   return (
     <header className="mx-auto max-w-6xl px-6 pt-10">
       <div className="flex flex-wrap items-center justify-between gap-6 border-b border-slate-200/70 pb-6">
-        <div>
-          <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
-          <p className="text-xs text-slate-400">Redesign mindset · CMS reality · Product ownership</p>
-        </div>
+        <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
         <div className="flex items-center gap-3">
           <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">Moje roadmapa</span>
           <div className="h-2 w-40 rounded-full bg-slate-200">
@@ -264,19 +266,6 @@ function PresentationSection({ active, setActive, progress }) {
         <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">
           A compact interactive presentation connecting my experience and vision on the way to a ČSOB public web redesign role.
         </p>
-
-        <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {proofPoints.map((p) => {
-            const Icon = p.icon;
-            return (
-              <div key={p.label} className="rounded-2xl border border-slate-100 bg-white/70 p-3">
-                <Icon className="text-blue-600" size={16} />
-                <p className="mt-2 text-[10px] font-semibold uppercase text-slate-400">{p.label}</p>
-                <p className="mt-0.5 text-xs font-bold text-slate-800">{p.value}</p>
-              </div>
-            );
-          })}
-        </div>
       </section>
 
       <section className="pb-4 pt-12">
@@ -286,10 +275,28 @@ function PresentationSection({ active, setActive, progress }) {
             <StageCard key={stage.id} stage={stage} active={i === active} onClick={() => setActive(i)} />
           ))}
         </div>
-        <div className="mt-2">
+
+        <div className="relative mt-2">
           <AnimatePresence mode="wait">
             <MiniBrowser activeStage={active} />
           </AnimatePresence>
+
+          <button
+            onClick={goPrev}
+            disabled={active === 0}
+            aria-label="Předchozí fáze"
+            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white p-2 shadow-md transition hover:-translate-x-0.5 disabled:cursor-not-allowed disabled:opacity-0"
+          >
+            <ArrowRight size={18} className="rotate-180 text-slate-700" />
+          </button>
+          <button
+            onClick={goNext}
+            disabled={active === stages.length - 1}
+            aria-label="Další fáze"
+            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white p-2 shadow-md transition hover:translate-x-0.5 disabled:cursor-not-allowed disabled:opacity-0"
+          >
+            <ArrowRight size={18} className="text-slate-700" />
+          </button>
         </div>
       </section>
     </header>
