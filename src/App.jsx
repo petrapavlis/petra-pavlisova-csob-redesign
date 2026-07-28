@@ -18,6 +18,7 @@ import {
   Workflow,
   Zap,
 } from "lucide-react";
+import heroPhoto from "./assets/petra-pavlisova.jpg";
 
 /* ============ DATA ============ */
 
@@ -226,7 +227,14 @@ function PresentationSection({ active, setActive, progress }) {
   return (
     <header className="mx-auto max-w-6xl px-6 pt-10">
       <div className="flex flex-wrap items-center justify-between gap-6 border-b border-slate-200/70 pb-6">
-        <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
+        <div className="flex items-center gap-3">
+          <img
+            src={heroPhoto}
+            alt="Petra Pavlisová"
+            className="h-9 w-9 rounded-full object-cover grayscale"
+          />
+          <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
+        </div>
         <div className="flex items-center gap-3">
           <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">Moje roadmapa</span>
           <div className="h-2 w-40 rounded-full bg-slate-200">
