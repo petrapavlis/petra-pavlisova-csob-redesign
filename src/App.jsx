@@ -152,26 +152,18 @@ const uxRoleModels = [
 /* ============ SECTION 1: MOJE CESTA (stálá prezentace) ============ */
 
 function StageCard({ stage, active, onClick }) {
-  const Icon = stage.icon;
   return (
     <button
       onClick={onClick}
-      className={`group relative min-w-[280px] max-w-[280px] rounded-3xl border p-5 text-left transition-all duration-300 ${
+      className={`group min-w-[280px] max-w-[280px] rounded-3xl border p-5 text-left transition-all duration-300 ${
         active ? "border-blue-300 bg-white shadow-xl shadow-blue-100" : "border-slate-200 bg-white/70 hover:-translate-y-1 hover:bg-white"
       }`}
     >
-      <div className="absolute -top-3 left-5 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 text-xs font-bold text-white shadow-md">
+      <span className="inline-flex rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 text-xs font-bold text-white shadow-md">
         {stage.year}
-      </div>
-      <div className="mt-4 flex items-start justify-between gap-3">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">{stage.label}</p>
-          <h3 className="mt-2 text-lg font-bold leading-tight text-slate-900">{stage.title}</h3>
-        </div>
-        <div className="rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-3 text-white shadow-md">
-          <Icon size={20} />
-        </div>
-      </div>
+      </span>
+      <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400">{stage.label}</p>
+      <h3 className="mt-2 text-lg font-bold leading-tight text-slate-900">{stage.title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-slate-600">{stage.subtitle}</p>
       <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-blue-700">
         Explore stage <ArrowRight className="transition-transform group-hover:translate-x-1" size={16} />
@@ -247,58 +239,54 @@ function MiniBrowser({ activeStage }) {
 function PresentationSection({ active, setActive, progress }) {
   return (
     <header className="mx-auto max-w-6xl px-6 pt-10">
-      <div className="flex items-center justify-between">
-        <p className="text-sm font-bold text-slate-900">Petra Pavlišová</p>
-        <p className="hidden text-xs font-semibold text-slate-500 md:block">Redesign mindset · CMS reality · Product ownership</p>
-      </div>
-
-      <section className="grid gap-8 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div className="flex flex-wrap items-center justify-between gap-6 border-b border-slate-200/70 pb-6">
         <div>
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-4 py-2 text-sm font-bold text-blue-800 shadow-sm">
-            <Sparkles size={16} /> Not a CV. A redesign journey.
-          </span>
-          <h1 className="mt-6 max-w-2xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 md:text-5xl">
-            From web delivery to public web ownership.
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">
-            A compact interactive presentation connecting my agency web redesign background and current Nespresso eBusiness experience with a ČSOB public web redesign role.
-          </p>
+          <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
+          <p className="text-xs text-slate-400">Redesign mindset · CMS reality · Product ownership</p>
         </div>
-        <div className="rounded-[2rem] border border-white/80 bg-white/70 p-5 shadow-xl shadow-blue-100 backdrop-blur">
-          <div className="flex items-center justify-between">
-            <p className="text-sm font-bold text-slate-900">Roadmap progress</p>
-            <p className="text-sm font-black text-blue-700">{progress}%</p>
-          </div>
-          <div className="mt-3 h-3 rounded-full bg-slate-100">
+        <div className="flex items-center gap-3">
+          <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">Moje roadmapa</span>
+          <div className="h-2 w-40 rounded-full bg-slate-200">
             <motion.div
-              className="h-3 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-400"
+              className="h-2 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-400"
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5 }}
             />
           </div>
-          <div className="mt-5 grid grid-cols-2 gap-3">
-            {proofPoints.map((p) => {
-              const Icon = p.icon;
-              return (
-                <div key={p.label} className="rounded-2xl bg-white p-3 shadow-sm">
-                  <Icon className="text-blue-600" size={18} />
-                  <p className="mt-2 text-[11px] font-semibold uppercase text-slate-400">{p.label}</p>
-                  <p className="mt-1 text-sm font-black text-slate-900">{p.value}</p>
-                </div>
-              );
-            })}
-          </div>
+          <span className="text-sm font-black text-blue-700">{progress}%</span>
+        </div>
+      </div>
+
+      <section className="pt-12">
+        <h1 className="max-w-2xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 md:text-5xl">
+          From owning a brand's web to owning a bank's public web.
+        </h1>
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">
+          A compact interactive presentation connecting my experience and vision on the way to a ČSOB public web redesign role.
+        </p>
+
+        <div className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-4">
+          {proofPoints.map((p) => {
+            const Icon = p.icon;
+            return (
+              <div key={p.label} className="rounded-2xl border border-slate-100 bg-white/70 p-3">
+                <Icon className="text-blue-600" size={16} />
+                <p className="mt-2 text-[10px] font-semibold uppercase text-slate-400">{p.label}</p>
+                <p className="mt-0.5 text-xs font-bold text-slate-800">{p.value}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
-      <section className="pb-4 pt-14">
-        <p className="mb-3 text-sm font-bold uppercase tracking-wide text-blue-700">Moje cesta a roadmapa</p>
-        <div className="flex gap-5 overflow-x-auto pb-4">
+      <section className="pb-4 pt-12">
+        <p className="mb-3 text-sm font-bold uppercase tracking-wide text-blue-700">Moje roadmapa</p>
+        <div className="flex gap-5 overflow-x-auto pb-6">
           {stages.map((stage, i) => (
             <StageCard key={stage.id} stage={stage} active={i === active} onClick={() => setActive(i)} />
           ))}
         </div>
-        <div className="mt-6">
+        <div className="mt-2">
           <AnimatePresence mode="wait">
             <MiniBrowser activeStage={active} />
           </AnimatePresence>
