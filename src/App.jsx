@@ -6,13 +6,11 @@ import {
   Building2,
   ChevronLeft,
   ChevronRight,
-  Clock,
   Layers,
   MousePointer2,
   Rocket,
   Search,
   Settings2,
-  ShieldCheck,
   Sparkles,
   TrendingUp,
   Users,
@@ -210,7 +208,7 @@ function MiniBrowser({ activeStage }) {
               ))}
             </div>
           </div>
-          <div className="mt-3 h-fit self-start rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-500 p-6 shadow-lg shadow-blue-200">
+          <div className="mt-14 h-fit self-start rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-500 p-6 shadow-lg shadow-blue-200">
             <p className="text-xs font-bold uppercase tracking-wide text-white/70">ČSOB redesign angle</p>
             <p className="mt-3 text-lg font-bold leading-snug text-white">{stage.angle}</p>
           </div>
@@ -291,107 +289,106 @@ function BeforeSiteMock() {
   return (
     <div className="border border-[#cfe6f3] bg-white">
       <div className="flex items-center gap-3 border-b border-[#cfe6f3] bg-[#003366] px-4 py-1.5 text-[9px] font-medium text-white/70">
-        <span>Osobní</span>
-        <span>Firmy a instituce</span>
-        <span>O bance</span>
-        <span className="ml-auto">CZ | EN</span>
+        <span>Lidé</span>
+        <span>Firmy a podnikatelé</span>
+        <span>Velké firmy</span>
+        <span>Premium</span>
+        <span className="ml-auto">EN</span>
       </div>
-      <div className="flex flex-wrap items-center gap-3 border-b border-[#cfe6f3] bg-[#003366] px-4 py-3 text-[10px] font-semibold text-white">
+      <div className="flex flex-wrap items-center gap-3 border-b border-[#cfe6f3] bg-white px-4 py-3 text-[10px] font-semibold text-[#003366]">
         <span className="text-xs font-bold">LOGO BANKY</span>
-        <span>Účty a karty</span>
-        <span>Spoření a investice</span>
-        <span>Půjčky a hypotéky</span>
+        <span className="border-b-2 border-[#003366] pb-1">Účty a karty</span>
+        <span>Půjčky</span>
         <span>Pojištění</span>
-        <span>Penzijní produkty</span>
-        <span>Leasing</span>
-        <span className="ml-auto rounded bg-[#0099cc] px-2 py-1">Přihlásit se</span>
+        <span>Spoření</span>
+        <span>Investice</span>
+        <span>Bydlení</span>
+        <span className="ml-auto rounded bg-[#e56100] px-2 py-1 text-white">Přihlášení</span>
       </div>
-      <div className="bg-[#ebf6fd] px-4 py-6">
-        <p className="text-lg font-bold leading-snug text-[#003366]">
-          Hypotéka s garantovaným úrokem již od 4,49 % p.a.*
-        </p>
-        <p className="mt-1 max-w-md text-[9px] leading-relaxed text-[#003366]/60">
-          *Uvedená sazba platí při sjednání životního pojištění, aktivním používání platební karty a splnění dalších podmínek. Kompletní informace naleznete v aktuálním sazebníku a obchodních podmínkách produktu.
-        </p>
-        <div className="mt-3 flex gap-2">
-          <button className="bg-[#e56100] px-4 py-2 text-[10px] font-bold text-white">Sjednat online</button>
-          <button className="border border-[#003366]/30 px-4 py-2 text-[10px] font-bold text-[#003366]">Spočítat splátku</button>
+      <div className="bg-[#5b9bd5] px-4 py-3 text-sm font-bold text-white">Účty a karty</div>
+      <div className="grid gap-3 bg-[#ebf6fd] p-4 md:grid-cols-[1.1fr_1fr]">
+        <div className="flex aspect-[16/10] items-center justify-center bg-[#cfe6f3] text-[9px] text-[#003366]/40">
+          [ lifestyle fotografie ]
+        </div>
+        <div>
+          <p className="text-xs font-bold text-[#003366]">Plus Konto a Poštovní účet</p>
+          <p className="mt-1 text-sm font-bold text-[#003366]">Bankovní účet s vedením zdarma</p>
+          <ul className="mt-2 space-y-1 text-[9px] text-[#003366]/70">
+            <li>— Až 3 000 Kč v odměnách k novému účtu</li>
+            <li>— Online sjednání za pár minut</li>
+            <li>— Výhody a odměny ve Světě výhod</li>
+          </ul>
+          <button className="mt-3 bg-[#0099cc] px-3 py-1.5 text-[9px] font-bold text-white">
+            Více o účtu a podmínkách akce
+          </button>
         </div>
       </div>
       <div className="grid grid-cols-2 gap-2 p-4 md:grid-cols-4">
-        {[
-          "Běžný účet",
-          "Spořicí účet",
-          "Stavební spoření",
-          "Podílové fondy",
-          "Kreditní karta",
-          "Životní pojištění",
-          "Operativní leasing",
-          "Penzijní spoření",
-        ].map((t) => (
+        {["Osobní účet", "Studentský účet", "Kreditní karta", "Operativní leasing", "Stavební spoření", "Životní pojištění", "Podílové fondy", "Penzijní spoření"].map((t) => (
           <div key={t} className="border border-[#cfe6f3] p-3 text-center text-[9px] font-medium leading-snug text-[#003366]">
             {t}
           </div>
         ))}
       </div>
       <p className="border-t border-[#cfe6f3] p-3 text-[8px] leading-relaxed text-[#003366]/40">
-        Tato prezentace je ilustrativní srovnávací koncept, nikoliv skutečný obsah webu žádné konkrétní banky. Všechny sazby, produkty a texty jsou smyšlené a slouží pouze pro demonstraci principů struktury a UX.
+        Ilustrativní srovnávací koncept, nikoliv skutečný obsah webu žádné konkrétní banky.
       </p>
     </div>
   );
 }
 
 function AfterSiteMock() {
+  const plans = [
+    { name: "Základní", price: "Zdarma", tone: "border-[#cfe6f3]", features: ["Platební karta zdarma", "Správa v appce"] },
+    { name: "Plus", price: "99 Kč / měsíc", tone: "border-[#0099cc]", features: ["Bez poplatků v zahraničí", "Pojištění nákupů"] },
+    { name: "Premium", price: "249 Kč / měsíc", tone: "border-[#003366]", features: ["Prioritní podpora", "Cestovní pojištění"] },
+  ];
   return (
-    <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white">
-      <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 opacity-10 blur-3xl" />
-      <div className="relative flex items-center justify-between border-b border-slate-100 px-6 py-4">
+    <div className="rounded-3xl border border-slate-200 bg-white">
+      <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-600 text-xs font-bold text-white">b</div>
-          <span className="text-sm font-bold text-slate-900">banka</span>
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#003366] text-xs font-bold text-white">b</div>
+          <span className="text-sm font-bold text-[#003366]">banka</span>
         </div>
-        <div className="hidden gap-5 text-xs font-medium text-slate-500 md:flex">
-          <span>Spoření</span>
-          <span>Půjčky</span>
-          <span>Pojištění</span>
+        <div className="hidden gap-5 text-xs font-medium text-[#003366]/60 md:flex">
+          <span>Účty</span>
+          <span>Karty</span>
+          <span>Hypotéky</span>
         </div>
-        <button className="rounded-full bg-blue-600 px-4 py-1.5 text-xs font-medium text-white shadow-sm shadow-blue-200">
-          Přihlásit se
+        <button className="rounded-full bg-[#e56100] px-4 py-1.5 text-xs font-bold text-white shadow-sm">
+          Otevřít účet
         </button>
       </div>
 
-      <div className="relative px-6 py-12">
-        <h3 className="max-w-md text-2xl font-black leading-tight text-slate-900">
-          Potřebujete půjčit na bydlení?
-        </h3>
-        <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-500">
-          Spočítáme splátku za 2 minuty. Bez papírování předem, bez závazků.
+      <div className="px-6 py-10">
+        <h3 className="text-2xl font-black leading-tight text-[#003366]">Najděte účet, který vám sedí.</h3>
+        <p className="mt-2 max-w-sm text-sm leading-relaxed text-slate-500">
+          Porovnejte 3 účty a vyberte za pár vteřin — bez čtení sazebníku.
         </p>
-        <button className="mt-6 rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-blue-200">
-          Spočítat hypotéku
-        </button>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          {[
-            { icon: ShieldCheck, label: "Bez skrytých poplatků" },
-            { icon: Clock, label: "Odpověď do 24 hodin" },
-            { icon: BadgeCheck, label: "Nic nepodepisujete dopředu" },
-          ].map((c) => {
-            const Icon = c.icon;
-            return (
-              <span key={c.label} className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3 py-1.5 text-[11px] font-medium text-blue-700">
-                <Icon size={13} /> {c.label}
-              </span>
-            );
-          })}
-        </div>
       </div>
 
-      <div className="relative grid grid-cols-3 gap-4 border-t border-slate-100 px-6 py-6">
-        {["Chci spořit", "Chci si půjčit", "Chci se pojistit"].map((t) => (
-          <div key={t} className="rounded-2xl bg-blue-50 p-3 text-center text-xs font-medium text-blue-700">
-            {t}
+      <div className="grid gap-4 border-t border-slate-100 p-6 md:grid-cols-3">
+        {plans.map((p) => (
+          <div key={p.name} className={`rounded-2xl border-2 ${p.tone} p-4`}>
+            <p className="text-sm font-bold text-[#003366]">{p.name}</p>
+            <p className="mt-1 text-xs font-medium text-[#0099cc]">{p.price}</p>
+            <ul className="mt-3 space-y-1.5">
+              {p.features.map((f) => (
+                <li key={f} className="text-xs text-slate-600">— {f}</li>
+              ))}
+            </ul>
+            <button className="mt-4 w-full rounded-full border border-[#003366] py-1.5 text-xs font-bold text-[#003366]">
+              Vybrat
+            </button>
           </div>
+        ))}
+      </div>
+
+      <div className="flex flex-wrap gap-3 border-t border-slate-100 px-6 py-5">
+        {["Založení za 5 minut", "Bez poplatku za vedení", "Zrušení kdykoliv"].map((c) => (
+          <span key={c} className="rounded-full bg-[#ebf6fd] px-3 py-1.5 text-[11px] font-medium text-[#003366]">
+            {c}
+          </span>
         ))}
       </div>
     </div>
@@ -483,9 +480,9 @@ function CaseStudySection() {
     <section className="border-t border-slate-200 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <p className="text-xs font-bold uppercase tracking-wide text-blue-700">Case study</p>
-        <h2 className="mt-2 text-3xl font-black text-slate-950">ČSOB public web — redesign koncept</h2>
+        <h2 className="mt-2 text-3xl font-black text-slate-950">ČSOB Účty a karty — redesign koncept</h2>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">
-          Ilustrativní srovnání principů: jak dnes typicky vypadá struktura velkého bankovního webu (Before) a jak by mohla vypadat po redesignu zaměřeném na srozumitelnost pro běžného člověka (After).
+          ČSOB má oproti řadě konkurentů solidní a přehlednou strukturu — orientace na webu funguje dobře. Redesign proto neřeší chaos, ale zlidštění tónu a vizuální modernizaci: srovnání konkrétní podstránky (účty/karty) dnes (Before) a po zjednodušení a osvěžení vzhledu (After), inspirované přehledností nabídky u Revolutu.
         </p>
 
         <div className="mt-8 inline-flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
@@ -497,7 +494,7 @@ function CaseStudySection() {
           </button>
           <button
             onClick={() => setMode("after")}
-            className={`px-5 py-2.5 transition ${mode === "after" ? "bg-blue-600 text-white" : "text-slate-600"}`}
+            className={`px-5 py-2.5 transition ${mode === "after" ? "bg-[#0099cc] text-white" : "text-slate-600"}`}
           >
             After redesign
           </button>
