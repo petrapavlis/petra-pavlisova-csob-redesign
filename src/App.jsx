@@ -5,6 +5,8 @@ import {
   BadgeCheck,
   BarChart3,
   Building2,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   Layers,
   MousePointer2,
@@ -270,13 +272,13 @@ function PresentationSection({ active, setActive, progress }) {
 
       <section className="pb-4 pt-12">
         <p className="mb-3 text-sm font-bold uppercase tracking-wide text-blue-700">Moje roadmapa</p>
-        <div className="flex gap-5 overflow-x-auto pb-6">
-          {stages.map((stage, i) => (
-            <StageCard key={stage.id} stage={stage} active={i === active} onClick={() => setActive(i)} />
-          ))}
-        </div>
+        <div className="flex gap-5 overflow-x-auto px-1 pb-6 pt-3">
+                  {stages.map((stage, i) => (
+                    <StageCard key={stage.id} stage={stage} active={i === active} onClick={() => setActive(i)} />
+                  ))}
+                </div>
 
-        <div className="relative mt-2">
+        <div className="relative mt-2 px-2 md:px-14">
           <AnimatePresence mode="wait">
             <MiniBrowser activeStage={active} />
           </AnimatePresence>
@@ -285,17 +287,17 @@ function PresentationSection({ active, setActive, progress }) {
             onClick={goPrev}
             disabled={active === 0}
             aria-label="Předchozí fáze"
-            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white p-2 shadow-md transition hover:-translate-x-0.5 disabled:cursor-not-allowed disabled:opacity-0"
+            className="absolute -left-1 top-1/2 -translate-y-1/2 text-slate-300 transition hover:-translate-x-1 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-0 md:left-0"
           >
-            <ArrowRight size={18} className="rotate-180 text-slate-700" />
+            <ChevronLeft size={32} strokeWidth={2.5} />
           </button>
           <button
             onClick={goNext}
             disabled={active === stages.length - 1}
             aria-label="Další fáze"
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-slate-200 bg-white p-2 shadow-md transition hover:translate-x-0.5 disabled:cursor-not-allowed disabled:opacity-0"
+            className="absolute -right-1 top-1/2 -translate-y-1/2 text-slate-300 transition hover:translate-x-1 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-0 md:right-0"
           >
-            <ArrowRight size={18} className="text-slate-700" />
+            <ChevronRight size={32} strokeWidth={2.5} />
           </button>
         </div>
       </section>
