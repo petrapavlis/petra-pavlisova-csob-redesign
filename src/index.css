@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+.stage-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.stage-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.stage-scroll::-webkit-scrollbar-thumb {
+  background-color: #93c5fd;
+  border-radius: 999px;
+}
+
+.stage-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #60a5fa;
+}
+
+.stage-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #93c5fd transparent;
+}

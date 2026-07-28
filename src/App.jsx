@@ -447,7 +447,7 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
         </div>
       </div>
 
-      <section className="pt-12">
+      <section className="pt-16">
         <h1 className="max-w-2xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 md:text-5xl">
           {t.heroLine1}
           <br />
@@ -456,9 +456,9 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
         <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">{t.heroSub}</p>
       </section>
 
-      <section className="pb-4 pt-12">
+      <section className="pb-4 pt-20">
         <p className="mb-3 text-sm font-bold uppercase tracking-wide text-blue-700">{t.roadmapLabel}</p>
-        <div className="flex gap-5 overflow-x-auto px-4 pb-6 pt-3">
+        <div className="stage-scroll flex gap-5 overflow-x-auto px-4 pb-6 pt-3">
           {stages.map((stage, i) => (
             <StageCard key={stage.id} stage={stage} active={i === active} onClick={() => setActive(i)} t={t} />
           ))}
@@ -668,7 +668,7 @@ function WhyItWorksPanel({ lang, t }) {
   }[lang];
 
   return (
-    <div className="mt-6 grid gap-6 md:grid-cols-2">
+    <div className="mt-10 grid gap-8 md:grid-cols-2">
       <div className="rounded-2xl border border-[#cfe6f3] bg-[#ebf6fd] p-5">
         <p className="text-xs font-bold uppercase tracking-wide text-[#003366]/60">{t.todayApproach}</p>
         <ul className="mt-3 space-y-2.5">
@@ -697,10 +697,10 @@ function WhyItWorksPanel({ lang, t }) {
 
 function CompetitiveStudy({ competitors, uxRoleModels, t }) {
   return (
-    <section className="mt-14">
+    <section className="mt-20">
       <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{t.marketContextLabel}</p>
       <h2 className="mt-2 text-2xl font-black text-slate-950">{t.marketContextTitle}</h2>
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
+      <div className="mt-10 grid gap-8 md:grid-cols-2">
         <div>
           <div className="mb-3 flex items-center gap-2 text-sm font-bold text-slate-800">
             <Building2 size={16} /> {t.competitorsTitle}
@@ -743,7 +743,7 @@ function CaseStudySection({ lang, t, competitors, uxRoleModels }) {
   const [mode, setMode] = useState("before");
   return (
     <section className="border-t border-slate-200 bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+      <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="flex flex-wrap items-start justify-between gap-6">
           <div>
             <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{t.caseStudyLabel}</p>
