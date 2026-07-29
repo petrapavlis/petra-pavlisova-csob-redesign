@@ -7,9 +7,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Circle,
+  FileDown,
   Layers,
   Link2,
-  Mail,
   MousePointer2,
   Rocket,
   Search,
@@ -317,7 +317,7 @@ const UI = {
     ctaTitle: "Máte zájem o celý profil?",
     ctaText: "Podívejte se na můj LinkedIn profil, nebo mě kontaktujte pro kompletní CV.",
     ctaLinkedin: "LinkedIn profil",
-    ctaContact: "Kontakt na vyžádání",
+    ctaContact: "Stáhnout CV",
   },
   en: {
     roadmapLabel: "My journey",
@@ -353,7 +353,7 @@ const UI = {
     ctaTitle: "Interested in the full profile?",
     ctaText: "View my LinkedIn profile or contact me for the full CV.",
     ctaLinkedin: "LinkedIn profile",
-    ctaContact: "Contact available on request",
+    ctaContact: "Download CV",
   },
 };
 
@@ -909,9 +909,13 @@ function FinalCTA({ t }) {
           >
             <Link2 size={16} /> {t.ctaLinkedin}
           </a>
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white">
-            <Mail size={16} /> {t.ctaContact}
-          </span>
+          <a
+          href={`${import.meta.env.BASE_URL}cv/Petra-Pavlisova-CV.pdf`}
+            download
+            className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10"
+          >
+            <FileDown size={16} /> {t.ctaContact}
+          </a>
         </div>
         <p className="mx-auto mt-10 max-w-2xl text-xs leading-relaxed text-white/85">{t.disclaimerText}</p>
       </div>
