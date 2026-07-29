@@ -1,17 +1,26 @@
-# React + Vite
+# Petra Pavlisova — Interactive CV / ČSOB Public Web Redesign Journey
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a self-initiated interactive CV concept created to show how I think about public web redesign, web channel ownership and digital delivery.
 
-Currently, two official plugins are available:
+It connects three areas of my experience:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Agency web development and redesign projects, including Škoda Auto, BMW, Velo e-shop and Korejská energie
+- Current corporate eBusiness and CMS ownership experience at Nestlé / Nespresso CZ/SK
+- Product/channel ownership thinking: discovery, backlog, UX, tracking, launch and continuous optimization
 
-## React Compiler
+## Purpose
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This is not an official ČSOB redesign proposal.
+It is a small interactive presentation showing my thinking process and how my experience maps to a public web channel owner role.
 
-## Expanding the ESLint configuration
+## Built with
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# petra-pavlisova-csob-redesign
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- GitHub Pages
+
+## Live demo
+
+https://petrapavlis.github.io/petra-pavlisova-csob-redesign/
