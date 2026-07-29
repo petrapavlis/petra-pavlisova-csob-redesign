@@ -30,7 +30,7 @@ const stagesByLang = {
       id: "agency",
       year: "01",
       label: "Základ webových projektů",
-      title: "Agenturní zkušenost: weby, které se opravdu dostanou do provozu",
+      title: "Agenturní zkušenost: weby, které se vyvíjely nebo redesignovaly",
       subtitle: "Škoda Auto · BMW · VELO, Vuse, glo™ a neo™",
       icon: Layers,
       summary:
@@ -41,7 +41,7 @@ const stagesByLang = {
         "Iterativní dodávkové cykly, priority, zpětná vazba a připravenost na launch",
       ],
       angle:
-        "Užitečné pro ČSOB: Už teď znám realitu redesign projektů — závislosti, rozhodnutí, změny stakeholderů a praktická omezení.",
+        "Znám realitu redesignu projektů — závislosti, rozhodnutí, změny stakeholderů a praktická omezení.",
     },
     {
       id: "nespresso",
@@ -55,10 +55,10 @@ const stagesByLang = {
       bullets: [
         "Exekuce webu napříč CZ, SK, CZEN a SKEN variantami + nově PL a PLEN",
         "Tracking kampaní, homepage bannery, landing pages a aktualizace PDP",
-        "Dokumentace v Jira/Confluence, řešení incidentů a platformových problémů",
+        "Dokumentace v Jira/Confluence, řešení incidentů",
       ],
       angle:
-        "Užitečné pro ČSOB: Umím propojit byznys požadavky s technickou realitou platformy, aniž bych ztratila detail, timing nebo ownership.",
+        "Umím propojit byznys požadavky s technickou realitou platformy, aniž bych ztratila detail, timing nebo ownership.",
     },
     {
       id: "discovery",
@@ -71,11 +71,11 @@ const stagesByLang = {
         "U redesignu public webu bych začala zmapováním klíčových cílových skupin, byznys cílů, současných problémů, vlastnictví obsahu a konverzních cílů — ještě předtím, než se pustím do vizuálního designu.",
       bullets: [
         "Zmapovat cesty veřejných, firemních i korporátních uživatelů",
-        "Identifikovat mezery v obsahu, duplicity, tření a vysoce dopadová vstupní místa",
+        "Najít mezery v obsahu, duplicity, tření a vysoce dopadová vstupní místa",
         "Sladit očekávání marketingu, produktových týmů, legal/regulatoriky a IT",
       ],
       angle:
-        "Moje role: Strukturovat chaos do sdíleného pohledu na produkt. Co je důležité, proč, pro koho a jak měříme úspěch.",
+        "Strukturovat chaos do sdíleného pohledu na produkt. Co je důležité, proč, pro koho a jak měříme úspěch.",
     },
     {
       id: "roadmap",
@@ -92,7 +92,7 @@ const stagesByLang = {
         "Prioritizovat podle dopadu, závislostí a připravenosti na release",
       ],
       angle:
-        "Moje role: Zajistit, že redesign není jen kreativní cvičení, ale řízený a transparentní dodávkový proces.",
+        "Zajistit, že redesign není jen kreativní cvičení, ale řízený a transparentní dodávkový proces.",
     },
     {
       id: "ux",
@@ -109,7 +109,7 @@ const stagesByLang = {
         "Udržet obsah srozumitelný, compliant a snadno spravovatelný",
       ],
       angle:
-        "Moje role: Propojit UX/design s byznys výsledky, realitou obsahu a udržovatelností platformy.",
+        "Propojit UX/design s byznys výsledky, realitou obsahu a udržovatelností platformy.",
     },
     {
       id: "launch",
@@ -126,7 +126,7 @@ const stagesByLang = {
         "Kontinuální zlepšování UX a konverzí na základě dat",
       ],
       angle:
-        "Moje role: Udržet ownership i po go-live. Nejen dodat redesign, ale zlepšovat public web dlouhodobě.",
+        "Udržet ownership i po go-live. Nejen dodat redesign, ale zlepšovat public web dlouhodobě.",
     },
   ],
   en: [
@@ -134,7 +134,7 @@ const stagesByLang = {
       id: "agency",
       year: "01",
       label: "Web project foundation",
-      title: "Agency experience: websites that actually get built",
+      title: "Agency experience: websites that actually get built or redesigned",
       subtitle: "Škoda Auto · BMW · VELO, Vuse, glo™ and neo™",
       icon: Layers,
       summary:
@@ -145,7 +145,7 @@ const stagesByLang = {
         "Iterative delivery cycles, priorities, feedback and launch readiness",
       ],
       angle:
-        "Useful for ČSOB: I already know the reality of redesign projects — dependencies, decisions, stakeholder changes and practical constraints.",
+        "I already know the reality of redesign projects — dependencies, decisions, stakeholder changes and practical constraints.",
     },
     {
       id: "nespresso",
@@ -162,7 +162,7 @@ const stagesByLang = {
         "Jira/Confluence documentation, incident follow-up and platform issue handling",
       ],
       angle:
-        "Useful for ČSOB: I can bridge business requirements and technical platform reality without losing detail, timing or ownership.",
+        "I can bridge business requirements and technical platform reality without losing detail, timing or ownership.",
     },
     {
       id: "discovery",
@@ -179,7 +179,7 @@ const stagesByLang = {
         "Align marketing, product teams, legal/regulatory and IT expectations",
       ],
       angle:
-        "My role: Structure the chaos into a shared product view. What matters, why, for whom and how we measure success.",
+        "Structure the chaos into a shared product view. What matters, why, for whom and how we measure success.",
     },
     {
       id: "roadmap",
@@ -196,7 +196,7 @@ const stagesByLang = {
         "Prioritize based on impact, dependencies and release readiness",
       ],
       angle:
-        "My role: make sure the redesign is not just a creative exercise, but a controlled and transparent delivery process.",
+        "make sure the redesign is not just a creative exercise, but a controlled and transparent delivery process.",
     },
     {
       id: "ux",
@@ -213,7 +213,7 @@ const stagesByLang = {
         "Keep content understandable, compliant and easy to maintain",
       ],
       angle:
-        "My role: connect UX/design with business outcomes, content reality and platform maintainability.",
+        "connect UX/design with business outcomes, content reality and platform maintainability.",
     },
     {
       id: "launch",
@@ -230,7 +230,7 @@ const stagesByLang = {
         "Continuous UX and conversion improvements based on data",
       ],
       angle:
-        "My role: Keep ownership after go-live. Not only deliver the redesign, but make the public web better over time.",
+        "Keep ownership after go-live. Not only deliver the redesign, but make the public web better over time.",
     },
   ],
 };
@@ -286,10 +286,10 @@ const UI = {
   cz: {
     roadmapLabel: "Moje cesta",
     progressLabel: "Na cestě",
-    heroLine1: "Jak uvažuji o redesignu webu.",
+    heroLine1: "Jak uvažuji o webu",
     heroLine2: "Bigger web. Bigger step.",
     heroSub:
-      "Koncept interaktivního CV, které propojuje mé zkušenosti s redesignem webových stránek agentury, současné zkušenosti s provozováním e-businessu a způsob uvažování, který bych vnesla do veřejného kanálu ČSOB.",
+      "Koncept interaktivního CV, které propojuje mé zkušenosti s redesignem webových stránek agentury, současné zkušenosti s provozováním e-businessu a způsob uvažování, který bych vnesla do práce na webu ČSOB.",
     activeStage: "Aktivní fáze",
     exploreStage: "Zobrazit fázi",
     csobAngle: "Úhel pohledu pro ČSOB",
@@ -312,7 +312,7 @@ const UI = {
       "Toto není oficiální návrh redesignu webu ČSOB. Jde o mnou iniciovaný interaktivní koncept, který ukazuje, jak přemýšlím o vlastnictví public webu, redesignové exekuci a správě digitálního kanálu.",
     fitLabel: "Proč se na tuto roli hodím",
     fitTitle: "Why this role fits my profile",
-    bringLabel: "Co bych přinesla",
+    bringLabel: "Moje role",
     bringTitle: "Co bych přinesla redesignu public webu ČSOB",
     ctaTitle: "Máte zájem o celý profil?",
     ctaText: "Podívejte se na můj LinkedIn profil, nebo mě kontaktujte pro kompletní CV.",
@@ -322,7 +322,7 @@ const UI = {
   en: {
     roadmapLabel: "My journey",
     progressLabel: "On the way",
-    heroLine1: "How I think about a web redesign.",
+    heroLine1: "How I think about a web",
     heroLine2: "Bigger web. Bigger step.",
     heroSub:
       "An interactive CV concept connecting my agency web redesign experience, current eBusiness ownership background and they type of thinking I would bring to the ČSOB public web channel.",
@@ -348,7 +348,7 @@ const UI = {
       "This is not an official ČSOB redesign proposal. It is a self-initiated interactive concept created to show how I think about public web ownership, redesign delivery and digital channel management.",
     fitLabel: "Why this role fits",
     fitTitle: "Why this role fits my profile",
-    bringLabel: "What I would bring",
+    bringLabel: "My role",
     bringTitle: "What I would bring to the ČSOB public web redesign",
     ctaTitle: "Interested in the full profile?",
     ctaText: "View my LinkedIn profile or contact me for the full CV.",
@@ -372,7 +372,7 @@ function StageCard({ stage, active, onClick, t }) {
       <span className="inline-flex rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 px-3 py-1 text-xs font-bold text-white shadow-md">
         {stage.year}
       </span>
-      <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-400">{stage.label}</p>
+      <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">{stage.label}</p>
       <h3 className="mt-2 text-lg font-bold leading-tight text-slate-900">{stage.title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-slate-600">{stage.subtitle}</p>
       <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-blue-700">
@@ -397,7 +397,7 @@ function MiniBrowser({ activeStage, stages, t }) {
         <span className="h-3 w-3 rounded-full bg-blue-200" />
         <span className="h-3 w-3 rounded-full bg-cyan-200" />
         <span className="h-3 w-3 rounded-full bg-emerald-200" />
-        <div className="ml-3 flex-1 rounded-full bg-white px-4 py-1.5 text-xs text-slate-400 shadow-inner">
+        <div className="ml-3 flex-1 rounded-full bg-white px-4 py-1.5 text-xs text-slate-500 shadow-inner">
           petra-pavlisova / {stage.id}
         </div>
       </div>
@@ -524,7 +524,7 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
             </div>
           </div>
           <div className="mt-4 flex items-center gap-3">
-            <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
               {t.progressLabel}
             </span>
             <div className="h-2 flex-1 rounded-full bg-slate-200">
@@ -550,7 +550,7 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
           </div>
 
           <div className="flex items-center gap-3 justify-self-center">
-            <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+            <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
               {t.progressLabel}
             </span>
             <div className="h-2 w-40 rounded-full bg-slate-200">
@@ -847,7 +847,7 @@ function CompetitiveStudy({ competitors, uxRoleModels, t }) {
             {competitors.map((c) => (
               <div key={c.name} className="p-3">
                 <p className="text-sm font-bold text-slate-900">{c.name}</p>
-                <p className="text-xs text-slate-400">{c.owner}</p>
+                <p className="text-xs text-slate-500">{c.owner}</p>
                 <p className="mt-1 text-xs leading-relaxed text-slate-600">{c.note}</p>
               </div>
             ))}
@@ -913,7 +913,7 @@ function FinalCTA({ t }) {
             <Mail size={16} /> {t.ctaContact}
           </span>
         </div>
-        <p className="mx-auto mt-10 max-w-2xl text-xs leading-relaxed text-white/60">{t.disclaimerText}</p>
+        <p className="mx-auto mt-10 max-w-2xl text-xs leading-relaxed text-white/85">{t.disclaimerText}</p>
       </div>
     </section>
   );
@@ -946,7 +946,7 @@ function CaseStudySection({ lang, t, competitors, uxRoleModels }) {
         </div>
 
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600">{t.caseStudyIntro}</p>
-        <p className="mt-3 max-w-2xl text-xs italic leading-relaxed text-slate-400">{t.caseStudyDisclaimer}</p>
+        <p className="mt-3 max-w-2xl text-xs italic leading-relaxed text-slate-500">{t.caseStudyDisclaimer}</p>
 
         <div className="mt-6">
           <AnimatePresence mode="wait">
@@ -961,7 +961,7 @@ function CaseStudySection({ lang, t, competitors, uxRoleModels }) {
             </motion.div>
           </AnimatePresence>
         </div>
-        <p className="mt-2 text-[11px] leading-relaxed text-slate-400">{t.illustrativeNote}</p>
+        <p className="mt-2 text-[11px] leading-relaxed text-slate-500">{t.illustrativeNote}</p>
 
         <WhyItWorksPanel lang={lang} t={t} />
         <CompetitiveStudy competitors={competitors} uxRoleModels={uxRoleModels} t={t} />
