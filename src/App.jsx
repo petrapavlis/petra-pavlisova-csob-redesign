@@ -8,11 +8,14 @@ import {
   ChevronRight,
   Circle,
   Layers,
+  Link2,
+  Mail,
   MousePointer2,
   Rocket,
   Search,
   Settings2,
   Sparkles,
+  Target,
   TrendingUp,
   Users,
   Workflow,
@@ -267,14 +270,48 @@ const uxRoleModelsByLang = {
   ],
 };
 
+const fitCardsByLang = {
+  cz: [
+    { icon: Layers, title: "Agenturní zkušenost s redesignem", text: "Škoda Auto, BMW, Velo e-shop, Korejská energie" },
+    { icon: Settings2, title: "Vlastnictví firemního webu", text: "Nespresso CZ/SK, B2B/B2C platformy, CMS, kampaně, lokalizace" },
+    { icon: Link2, title: "Most mezi byznysem a technologiemi", text: "Marketing, HQ, IT, Jira/Confluence, incidenty, platformová omezení" },
+    { icon: Target, title: "Produktové myšlení", text: "UX, tracking, konverze, backlog, kontinuální optimalizace" },
+  ],
+  en: [
+    { icon: Layers, title: "Agency redesign background", text: "Škoda Auto, BMW, Velo e-shop, Korejská energie" },
+    { icon: Settings2, title: "Corporate web ownership", text: "Nespresso CZ/SK, B2B/B2C platforms, CMS, campaigns, localization" },
+    { icon: Link2, title: "Bridge between business and tech", text: "Marketing, HQ, IT, Jira/Confluence, incidents, platform limitations" },
+    { icon: Target, title: "Product mindset", text: "UX, tracking, conversion, backlog, continuous optimization" },
+  ],
+};
+
+const bringBulletsByLang = {
+  cz: [
+    "Praktické porozumění dodávce redesignu webu z agenturních projektů",
+    "Praxe s CMS a implementací kampaní z korporátního eBusiness prostředí",
+    "Schopnost převést byznys, marketingové a regulatorní požadavky do strukturované dodávky webu",
+    "Dokumentace, prioritizace a sledování problémů přes Jira/Confluence",
+    "UX, struktura obsahu, tracking a myšlení orientované na konverzi",
+    "Silný ownership mindset: od plánování a exekuce po post-launch optimalizaci",
+  ],
+  en: [
+    "Practical understanding of web redesign delivery from agency projects",
+    "Hands-on CMS and campaign implementation experience from corporate eBusiness",
+    "Ability to translate business, marketing and regulatory requirements into structured web delivery",
+    "Jira/Confluence-based documentation, prioritization and issue follow-up",
+    "UX, content structure, tracking and conversion-oriented thinking",
+    "Strong ownership mindset: from planning and execution to post-launch optimization",
+  ],
+};
+
 const UI = {
   cz: {
     roadmapLabel: "Moje cesta",
     progressLabel: "Na cestě",
-    heroLine1: "Going public.",
+    heroLine1: "Jak uvažuji o redesignu webu.",
     heroLine2: "Bigger web. Bigger step.",
     heroSub:
-      "Od vlastnictví webu značky k vlastnictví roadmapy banky. Kompaktní interaktivní prezentace propojující mou zkušenost a vizi na cestě k roli redesignu public webu ČSOB.",
+      "Koncept interaktivního CV, které propojuje mé zkušenosti s redesignem webových stránek agentury, současné zkušenosti s provozováním e-businessu a způsob uvažování, který bych vnesla do veřejného kanálu ČSOB.",
     activeStage: "Aktivní fáze",
     exploreStage: "Zobrazit fázi",
     csobAngle: "Úhel pohledu pro ČSOB",
@@ -293,14 +330,24 @@ const UI = {
     marketContextTitle: "Konkurenční prostředí a UX role models",
     competitorsTitle: "Hlavní konkurence na trhu ČR",
     roleModelsTitle: "Globální UX role models (fintech)",
+    disclaimerText:
+      "Toto není oficiální návrh redesignu webu ČSOB. Jde o mnou iniciovaný interaktivní koncept, který ukazuje, jak přemýšlím o vlastnictví public webu, redesignové exekuci a správě digitálního kanálu.",
+    fitLabel: "Proč se na tuto roli hodím",
+    fitTitle: "Why this role fits my profile",
+    bringLabel: "Co bych přinesla",
+    bringTitle: "Co bych přinesla redesignu public webu ČSOB",
+    ctaTitle: "Máte zájem o celý profil?",
+    ctaText: "Podívejte se na můj LinkedIn profil, nebo mě kontaktujte pro kompletní CV.",
+    ctaLinkedin: "LinkedIn profil",
+    ctaContact: "Kontakt na vyžádání",
   },
   en: {
     roadmapLabel: "My journey",
     progressLabel: "On the way",
-    heroLine1: "Going public.",
+    heroLine1: "How I think about a web redesign.",
     heroLine2: "Bigger web. Bigger step.",
     heroSub:
-      "From owning a brand's web to owning the roadmap of a bank's. A compact interactive presentation connecting my experience and vision on the way to a ČSOB public web redesign role.",
+      "An interactive CV concept connecting my agency web redesign experience, current eBusiness ownership background and they type of thinking I would bring to the ČSOB public web channel.",
     activeStage: "Active stage",
     exploreStage: "Explore stage",
     csobAngle: "ČSOB redesign angle",
@@ -319,6 +366,16 @@ const UI = {
     marketContextTitle: "Competitive landscape and UX role models",
     competitorsTitle: "Main competitors in the Czech market",
     roleModelsTitle: "Global fintech UX role models",
+    disclaimerText:
+      "This is not an official ČSOB redesign proposal. It is a self-initiated interactive concept created to show how I think about public web ownership, redesign delivery and digital channel management.",
+    fitLabel: "Why this role fits",
+    fitTitle: "Why this role fits my profile",
+    bringLabel: "What I would bring",
+    bringTitle: "What I would bring to the ČSOB public web redesign",
+    ctaTitle: "Interested in the full profile?",
+    ctaText: "View my LinkedIn profile or contact me for the full CV.",
+    ctaLinkedin: "LinkedIn profile",
+    ctaContact: "Contact available on request",
   },
 };
 
@@ -739,6 +796,82 @@ function CompetitiveStudy({ competitors, uxRoleModels, t }) {
   );
 }
 
+function DisclaimerBanner({ t }) {
+  return (
+    <div className="mx-auto max-w-6xl px-6">
+      <div className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-xs leading-relaxed text-amber-900">
+        {t.disclaimerText}
+      </div>
+    </div>
+  );
+}
+
+function ProfileFitSection({ t, fitCards }) {
+  return (
+    <section className="mx-auto max-w-6xl px-6 py-16">
+      <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{t.fitLabel}</p>
+      <h2 className="mt-2 text-3xl font-black text-slate-950">{t.fitTitle}</h2>
+      <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {fitCards.map((card) => {
+          const Icon = card.icon;
+          return (
+            <div key={card.title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="inline-flex rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-3 text-white shadow-md">
+                <Icon size={20} />
+              </div>
+              <h3 className="mt-4 text-base font-bold leading-tight text-slate-900">{card.title}</h3>
+              <p className="mt-2 text-xs leading-relaxed text-slate-500">{card.text}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function WhatIBringSection({ t, bullets }) {
+  return (
+    <section className="border-t border-slate-200 bg-white">
+      <div className="mx-auto max-w-6xl px-6 py-16">
+        <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{t.bringLabel}</p>
+        <h2 className="mt-2 max-w-2xl text-3xl font-black leading-tight text-slate-950">{t.bringTitle}</h2>
+        <ul className="mt-8 grid gap-3 md:grid-cols-2">
+          {bullets.map((b) => (
+            <li key={b} className="flex gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700">
+              <BadgeCheck className="mt-0.5 shrink-0 text-blue-600" size={18} />
+              {b}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function FinalCTA({ t }) {
+  return (
+    <section className="border-t border-slate-200 bg-gradient-to-br from-blue-600 to-cyan-500">
+      <div className="mx-auto max-w-6xl px-6 py-16 text-center">
+        <h2 className="text-3xl font-black text-white">{t.ctaTitle}</h2>
+        <p className="mt-3 text-base text-white/80">{t.ctaText}</p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://www.linkedin.com/in/petra-pavlis"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-blue-700 shadow-lg transition hover:-translate-y-0.5"
+          >
+            <Link2 size={16} /> {t.ctaLinkedin}
+          </a>
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white">
+            <Mail size={16} /> {t.ctaContact}
+          </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CaseStudySection({ lang, t, competitors, uxRoleModels }) {
   const [mode, setMode] = useState("before");
   return (
@@ -803,6 +936,9 @@ export default function App() {
 
   const progress = useMemo(() => Math.round(((active + 1) / stages.length) * 100), [active, stages.length]);
 
+  const fitCards = fitCardsByLang[lang];
+  const bringBullets = bringBulletsByLang[lang];
+
   return (
     <div className="min-h-screen bg-[radial-gradient(circle_at_top_left,#dbeafe,transparent_34%),linear-gradient(135deg,#f8fafc_0%,#eef2ff_50%,#f8fafc_100%)] text-slate-900">
       <PresentationSection
@@ -814,9 +950,15 @@ export default function App() {
         stages={stages}
         t={t}
       />
-      <main className="pb-16 pt-6">
+      <div className="pt-6">
+        <DisclaimerBanner t={t} />
+      </div>
+      <main className="pb-6 pt-6">
+        <ProfileFitSection t={t} fitCards={fitCards} />
+        <WhatIBringSection t={t} bullets={bringBullets} />
         <CaseStudySection lang={lang} t={t} competitors={competitors} uxRoleModels={uxRoleModels} />
       </main>
+      <FinalCTA t={t} />
     </div>
   );
 }
