@@ -434,6 +434,62 @@ function MiniBrowser({ activeStage, stages, t }) {
   );
 }
 
+function HeroGraphic() {
+  const nodes = [
+    { x: 20, y: 130 },
+    { x: 80, y: 60 },
+    { x: 130, y: 150 },
+    { x: 185, y: 95 },
+    { x: 235, y: 155 },
+    { x: 295, y: 35 },
+  ];
+  const pathD = nodes
+    .map((n, i) => {
+      if (i === 0) return `M ${n.x} ${n.y}`;
+      const prev = nodes[i - 1];
+      const midX = (prev.x + n.x) / 2;
+      return `Q ${midX} ${prev.y}, ${midX} ${(prev.y + n.y) / 2} T ${n.x} ${n.y}`;
+    })
+    .join(" ");
+
+  return (
+    <svg
+      viewBox="0 0 320 180"
+      className="hidden w-full max-w-sm justify-self-center md:block"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="heroLine" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stopColor="#2563eb" />
+          <stop offset="100%" stopColor="#22d3ee" />
+        </linearGradient>
+      </defs>
+      <path
+        d={pathD}
+        fill="none"
+        stroke="url(#heroLine)"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeDasharray="6 6"
+        opacity="0.8"
+      />
+      {nodes.map((n, i) => (
+        <motion.circle
+          key={i}
+          cx={n.x}
+          cy={n.y}
+          r={i === nodes.length - 1 ? 9 : 5.5}
+          fill={i === nodes.length - 1 ? "#2563eb" : "#ffffff"}
+          stroke="#2563eb"
+          strokeWidth="2.5"
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ duration: 2.4, repeat: Infinity, delay: i * 0.25 }}
+        />
+      ))}
+    </svg>
+  );
+}
+
 function PresentationSection({ active, setActive, progress, lang, setLang, stages, t }) {
   const goPrev = () => setActive((a) => (a > 0 ? a - 1 : a));
   const goNext = () => setActive((a) => (a < stages.length - 1 ? a + 1 : a));
@@ -526,13 +582,16 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
         </div>
       </div>
 
-      <section className="pt-16">
-        <h1 className="max-w-2xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 md:text-5xl">
-          {t.heroLine1}
-          <br />
-          <span className="text-2xl font-bold text-blue-700 md:text-3xl">{t.heroLine2}</span>
-        </h1>
-        <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">{t.heroSub}</p>
+      <section className="grid gap-8 pt-12 md:grid-cols-[1.3fr_1fr] md:items-center">
+        <div>
+          <h1 className="max-w-2xl text-4xl font-black leading-[1.05] tracking-tight text-slate-950 md:text-5xl">
+            {t.heroLine1}
+            <br />
+            <span className="text-2xl font-bold text-blue-700 md:text-3xl">{t.heroLine2}</span>
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-slate-600">{t.heroSub}</p>
+        </div>
+        <HeroGraphic />
       </section>
 
       <section className="pb-4 pt-20">
