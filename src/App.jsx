@@ -774,16 +774,6 @@ function CompetitiveStudy({ competitors, uxRoleModels, t }) {
   );
 }
 
-function DisclaimerBanner({ t }) {
-  return (
-    <div className="mx-auto max-w-6xl px-6">
-      <div className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-xs leading-relaxed text-amber-900">
-        {t.disclaimerText}
-      </div>
-    </div>
-  );
-}
-
 function WhatIBringSection({ t, bullets }) {
   return (
     <section className="mx-auto max-w-6xl px-6 pb-4">
@@ -820,6 +810,7 @@ function FinalCTA({ t }) {
             <Mail size={16} /> {t.ctaContact}
           </span>
         </div>
+        <p className="mx-auto mt-10 max-w-2xl text-xs leading-relaxed text-white/60">{t.disclaimerText}</p>
       </div>
     </section>
   );
@@ -902,9 +893,6 @@ export default function App() {
         stages={stages}
         t={t}
       />
-      <div className="pt-6">
-        <DisclaimerBanner t={t} />
-      </div>
       <div className="pt-6">
         <WhatIBringSection t={t} bullets={bringBullets} />
       </div>
