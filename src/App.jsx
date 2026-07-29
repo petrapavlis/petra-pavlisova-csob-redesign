@@ -440,44 +440,88 @@ function PresentationSection({ active, setActive, progress, lang, setLang, stage
 
   return (
     <header className="mx-auto max-w-6xl px-6 pt-10">
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 border-b border-slate-200/70 pb-6">
-        <div className="flex items-center gap-3">
-          <img
-            src={heroPhoto}
-            alt="Petra Pavlisová"
-            className="h-14 w-14 rounded-full object-cover shadow-sm grayscale"
-          />
-          <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
-        </div>
-
-        <div className="flex items-center gap-3 justify-self-center">
-          <span className="hidden text-xs font-semibold uppercase tracking-wide text-slate-400 sm:inline">
-            {t.progressLabel}
-          </span>
-          <div className="h-2 w-32 rounded-full bg-slate-200 sm:w-40">
-            <motion.div
-              className="h-2 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-400"
-              animate={{ width: `${progress}%` }}
-              transition={{ duration: 0.5 }}
-            />
+      <div className="border-b border-slate-200/70 pb-6">
+        {/* Mobile layout */}
+        <div className="md:hidden">
+          <div className="flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <img
+                src={heroPhoto}
+                alt="Petra Pavlisová"
+                className="h-12 w-12 rounded-full object-cover shadow-sm grayscale"
+              />
+              <p className="text-base font-bold text-slate-900">Petra Pavlisová</p>
+            </div>
+            <div className="flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
+              <button
+                onClick={() => setLang("cz")}
+                className={`px-3 py-1.5 transition ${lang === "cz" ? "bg-blue-700 text-white" : "text-slate-500"}`}
+              >
+                CZ
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`px-3 py-1.5 transition ${lang === "en" ? "bg-blue-700 text-white" : "text-slate-500"}`}
+              >
+                EN
+              </button>
+            </div>
           </div>
-          <span className="text-sm font-black text-blue-700">{progress}%</span>
+          <div className="mt-4 flex items-center gap-3">
+            <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+              {t.progressLabel}
+            </span>
+            <div className="h-2 flex-1 rounded-full bg-slate-200">
+              <motion.div
+                className="h-2 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-400"
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+            <span className="text-sm font-black text-blue-700">{progress}%</span>
+          </div>
         </div>
 
-        <div className="flex justify-end">
-          <div className="flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
-            <button
-              onClick={() => setLang("cz")}
-              className={`px-3 py-1.5 transition ${lang === "cz" ? "bg-blue-700 text-white" : "text-slate-500"}`}
-            >
-              CZ
-            </button>
-            <button
-              onClick={() => setLang("en")}
-              className={`px-3 py-1.5 transition ${lang === "en" ? "bg-blue-700 text-white" : "text-slate-500"}`}
-            >
-              EN
-            </button>
+        {/* Desktop layout */}
+        <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-6">
+          <div className="flex items-center gap-3">
+            <img
+              src={heroPhoto}
+              alt="Petra Pavlisová"
+              className="h-14 w-14 rounded-full object-cover shadow-sm grayscale"
+            />
+            <p className="text-lg font-bold text-slate-900">Petra Pavlisová</p>
+          </div>
+
+          <div className="flex items-center gap-3 justify-self-center">
+            <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+              {t.progressLabel}
+            </span>
+            <div className="h-2 w-40 rounded-full bg-slate-200">
+              <motion.div
+                className="h-2 rounded-full bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-400"
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+            <span className="text-sm font-black text-blue-700">{progress}%</span>
+          </div>
+
+          <div className="flex justify-end">
+            <div className="flex overflow-hidden rounded-full border border-slate-300 text-xs font-bold shadow-sm">
+              <button
+                onClick={() => setLang("cz")}
+                className={`px-3 py-1.5 transition ${lang === "cz" ? "bg-blue-700 text-white" : "text-slate-500"}`}
+              >
+                CZ
+              </button>
+              <button
+                onClick={() => setLang("en")}
+                className={`px-3 py-1.5 transition ${lang === "en" ? "bg-blue-700 text-white" : "text-slate-500"}`}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </div>
       </div>
