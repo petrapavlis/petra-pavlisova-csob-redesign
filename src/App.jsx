@@ -15,7 +15,6 @@ import {
   Search,
   Settings2,
   Sparkles,
-  Target,
   TrendingUp,
   Users,
   Workflow,
@@ -270,36 +269,15 @@ const uxRoleModelsByLang = {
   ],
 };
 
-const fitCardsByLang = {
-  cz: [
-    { icon: Layers, title: "Agenturní zkušenost s redesignem", text: "Škoda Auto, BMW, Velo e-shop, Korejská energie" },
-    { icon: Settings2, title: "Vlastnictví firemního webu", text: "Nespresso CZ/SK, B2B/B2C platformy, CMS, kampaně, lokalizace" },
-    { icon: Link2, title: "Most mezi byznysem a technologiemi", text: "Marketing, HQ, IT, Jira/Confluence, incidenty, platformová omezení" },
-    { icon: Target, title: "Produktové myšlení", text: "UX, tracking, konverze, backlog, kontinuální optimalizace" },
-  ],
-  en: [
-    { icon: Layers, title: "Agency redesign background", text: "Škoda Auto, BMW, Velo e-shop, Korejská energie" },
-    { icon: Settings2, title: "Corporate web ownership", text: "Nespresso CZ/SK, B2B/B2C platforms, CMS, campaigns, localization" },
-    { icon: Link2, title: "Bridge between business and tech", text: "Marketing, HQ, IT, Jira/Confluence, incidents, platform limitations" },
-    { icon: Target, title: "Product mindset", text: "UX, tracking, conversion, backlog, continuous optimization" },
-  ],
-};
-
 const bringBulletsByLang = {
   cz: [
-    "Praktické porozumění dodávce redesignu webu z agenturních projektů",
-    "Praxe s CMS a implementací kampaní z korporátního eBusiness prostředí",
     "Schopnost převést byznys, marketingové a regulatorní požadavky do strukturované dodávky webu",
     "Dokumentace, prioritizace a sledování problémů přes Jira/Confluence",
-    "UX, struktura obsahu, tracking a myšlení orientované na konverzi",
     "Silný ownership mindset: od plánování a exekuce po post-launch optimalizaci",
   ],
   en: [
-    "Practical understanding of web redesign delivery from agency projects",
-    "Hands-on CMS and campaign implementation experience from corporate eBusiness",
     "Ability to translate business, marketing and regulatory requirements into structured web delivery",
     "Jira/Confluence-based documentation, prioritization and issue follow-up",
-    "UX, content structure, tracking and conversion-oriented thinking",
     "Strong ownership mindset: from planning and execution to post-launch optimization",
   ],
 };
@@ -806,44 +784,19 @@ function DisclaimerBanner({ t }) {
   );
 }
 
-function ProfileFitSection({ t, fitCards }) {
-  return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
-      <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{t.fitLabel}</p>
-      <h2 className="mt-2 text-3xl font-black text-slate-950">{t.fitTitle}</h2>
-      <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-        {fitCards.map((card) => {
-          const Icon = card.icon;
-          return (
-            <div key={card.title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
-              <div className="inline-flex rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-500 p-3 text-white shadow-md">
-                <Icon size={20} />
-              </div>
-              <h3 className="mt-4 text-base font-bold leading-tight text-slate-900">{card.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-slate-500">{card.text}</p>
-            </div>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
 function WhatIBringSection({ t, bullets }) {
   return (
-    <section className="border-t border-slate-200 bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
-        <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{t.bringLabel}</p>
-        <h2 className="mt-2 max-w-2xl text-3xl font-black leading-tight text-slate-950">{t.bringTitle}</h2>
-        <ul className="mt-8 grid gap-3 md:grid-cols-2">
-          {bullets.map((b) => (
-            <li key={b} className="flex gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700">
-              <BadgeCheck className="mt-0.5 shrink-0 text-blue-600" size={18} />
-              {b}
-            </li>
-          ))}
-        </ul>
-      </div>
+    <section className="mx-auto max-w-6xl px-6 pb-4">
+      <p className="text-xs font-bold uppercase tracking-wide text-blue-700">{t.bringLabel}</p>
+      <h2 className="mt-2 max-w-2xl text-2xl font-black leading-tight text-slate-950">{t.bringTitle}</h2>
+      <ul className="mt-5 grid gap-3 md:grid-cols-3">
+        {bullets.map((b) => (
+          <li key={b} className="flex gap-3 rounded-2xl border border-slate-100 bg-slate-50 p-4 text-sm leading-relaxed text-slate-700">
+            <BadgeCheck className="mt-0.5 shrink-0 text-blue-600" size={18} />
+            {b}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }
@@ -936,7 +889,6 @@ export default function App() {
 
   const progress = useMemo(() => Math.round(((active + 1) / stages.length) * 100), [active, stages.length]);
 
-  const fitCards = fitCardsByLang[lang];
   const bringBullets = bringBulletsByLang[lang];
 
   return (
@@ -953,9 +905,10 @@ export default function App() {
       <div className="pt-6">
         <DisclaimerBanner t={t} />
       </div>
-      <main className="pb-6 pt-6">
-        <ProfileFitSection t={t} fitCards={fitCards} />
+      <div className="pt-6">
         <WhatIBringSection t={t} bullets={bringBullets} />
+      </div>
+      <main className="pb-6 pt-10">
         <CaseStudySection lang={lang} t={t} competitors={competitors} uxRoleModels={uxRoleModels} />
       </main>
       <FinalCTA t={t} />
